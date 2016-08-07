@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bank_id: 
+  foreign_id: MyString
+  user_id: 
+  name: MyString
+
+two:
+  bank_id: 
+  foreign_id: MyString
+  user_id: 
+  name: MyString

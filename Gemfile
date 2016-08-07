@@ -4,6 +4,7 @@ gem 'fine_ants', :path => '../fine_ants'
 gem 'slim-rails'
 gem 'administrate'
 gem 'dotenv'
+gem 'money-rails'
 gem 'puma'
 
 gem 'rails', '4.2.7'
