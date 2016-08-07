@@ -7,6 +7,7 @@ gem 'bourbon'
 gem 'dotenv'
 gem 'money-rails'
 gem 'puma'
+gem 'good_migrations'
 
 gem 'rails', '4.2.7'
 gem 'sqlite3'
@@ -18,5 +19,6 @@ gem 'turbolinks'
 
 group :development do
   gem 'pry'
+  gem 'web-console'
 end
 
