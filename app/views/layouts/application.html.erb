@@ -3,12 +3,18 @@
 <head>
   <title>FineAntsApp</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="app-container">
+    <div class="sidebar">
+      <%= render "admin/application/sidebar" -%>
+    </div>
 
-<%= yield %>
-
+    <main class="main-content" role="main">
+      <%= yield %>
+    </main>
+  </div>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>

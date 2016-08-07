@@ -48,7 +48,7 @@ class BankDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how banks are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(bank)
-  #   "Bank ##{bank.id}"
-  # end
+  def display_resource(bank)
+    bank.name
+  end
 end

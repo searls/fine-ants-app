@@ -10,17 +10,16 @@ table
         td
           = snapshot.account.name
         td
-          = snapshot.amount
+          = humanized_money_with_symbol snapshot.amount
   tfoot
     tr
       td
         strong Grand total
       td
         strong
-          = @total
+          = humanized_money_with_symbol @total
 
-= form_for :fine_ants, :url => {:controller => "fine_ants", :action => "create"} do |f|
-  = f.submit 'Update Accounts!'
-
-= link_to "Admin Stuff", new_admin_bank_path
+.actions
+  = link_to fine_ants_path, :method => :post do
+    .big-update-button Take Fresh Account Snapshots!
 

@@ -3,6 +3,8 @@
 This is a little Rails app that uses the
 [fine_ants](https://github.com/searls/fine_ants)  🐜 gem to aggregate personal account standings and tally them up by taking snapshots using Capybara (e.g. scraping them with browsers). It's meant to be run locally.
 
+<img width="669" alt="screen shot 2016-08-07 at 11 44 03 am" src="https://cloud.githubusercontent.com/assets/79303/17463468/52e93330-5c94-11e6-889d-43566c51f4ba.png">
+
 ## setup
 
 **This app isn't secured! At all! It's meant to be run locally! Don't go

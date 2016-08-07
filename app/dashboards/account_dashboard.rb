@@ -9,7 +9,8 @@ class AccountDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     bank: Field::BelongsTo,
-    user: Field::BelongsTo,
+    users: Field::HasMany,
+    snapshots: Field::HasMany,
     id: Field::Number,
     foreign_id: Field::String,
     name: Field::String,
@@ -24,16 +25,17 @@ class AccountDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :bank,
-    :user,
+    :users,
+    :snapshots,
     :id,
-    :foreign_id,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :bank,
-    :user,
+    :users,
+    :snapshots,
     :id,
     :foreign_id,
     :name,
@@ -46,7 +48,8 @@ class AccountDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :bank,
-    :user,
+    :users,
+    :snapshots,
     :foreign_id,
     :name,
   ].freeze
@@ -54,7 +57,7 @@ class AccountDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how accounts are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(account)
-  #   "Account ##{account.id}"
-  # end
+  def display_resource(account)
+    account.name
+  end
 end

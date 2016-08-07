@@ -9,6 +9,7 @@ class UserDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     bank: Field::BelongsTo,
+    accounts: Field::HasMany,
     id: Field::Number,
     user: Field::String,
     password: Field::String,
@@ -23,15 +24,16 @@ class UserDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :bank,
+    :accounts,
     :id,
     :user,
-    :password,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :bank,
+    :accounts,
     :id,
     :user,
     :password,
@@ -44,6 +46,7 @@ class UserDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :bank,
+    :accounts,
     :user,
     :password,
   ].freeze
@@ -51,7 +54,7 @@ class UserDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how users are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(user)
-  #   "User ##{user.id}"
-  # end
+  def display_resource(user)
+    user.user
+  end
 end

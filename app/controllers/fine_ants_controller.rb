@@ -1,9 +1,6 @@
 require "fine_ants"
 
 class FineAntsController < ApplicationController
-  def index
-  end
-
   def create
     User.all.each do |user|
       FineAnts.download(user.bank.fine_ants_adapter, {
@@ -21,6 +18,6 @@ class FineAntsController < ApplicationController
       end
     end
     flash[:info] = "Accounts updated!"
-    redirect_to :action => :index
+    redirect_to dashboard_path
   end
 end
