@@ -1,10 +1,3 @@
-PATH
-  remote: ../fine_ants
-  specs:
-    fine_ants (1.0.0)
-      capybara (~> 2.7)
-      selenium-webdriver (~> 2.53)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -86,6 +79,9 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.14)
+    fine_ants (1.0.0)
+      capybara (~> 2.7)
+      selenium-webdriver (~> 2.53)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -213,7 +209,7 @@ DEPENDENCIES
   bourbon
   coffee-rails (~> 4.1.0)
   dotenv
-  fine_ants!
+  fine_ants
   jquery-rails
   money-rails
   pry
