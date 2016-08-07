@@ -34,4 +34,30 @@ models for each of your accounts
 4. After the 🐜 update finishes, your dashboard should tally up your accounts based
 on their latest snapshots, giving you the grand total
 
+## secure your data
 
+I secure my data on an encrypted disk image. I do this with Disk Utility:
+
+![screen shot 2016-08-07 at 12 18 40 pm](https://cloud.githubusercontent.com/assets/79303/17463676/1f8db934-5c99-11e6-99d1-18f3bffe7b82.png)
+
+With the disk image mounted to `/Volumes/fine_ants_data`, I then set up symlinks
+to my local databases:
+
+```
+$ cd db
+$ ln -s /Volumes/fine_ants_data/development.sqlite3 .
+$ ln -s /Volumes/fine_ants_data/test.sqlite3 .
+```
+
+Then, when starting my app, I start by opening (and decrypting the local disk
+image) with:
+
+```
+$ open db/data.dmg
+# Which will prompt me for the image's password
+$ rails s
+```
+
+Since it's so easy to encrypt your local data in OS X, this is a good enough
+safeguard against accidentally sharing your personal financial information when
+moving around code and projects, which most people typically think of as safe.
