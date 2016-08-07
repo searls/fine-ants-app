@@ -1,7 +1,7 @@
 # fine_ants_app 🐜
 
-Designed to be used in conjunction with
-[fine_ants](https://github.com/searls/fine_ants).  🐜
+This is a little Rails app that uses the
+[fine_ants](https://github.com/searls/fine_ants)  🐜 gem to aggregate personal account standings and tally them up by taking snapshots using Capybara (e.g. scraping them with browsers). It's meant to be run locally.
 
 ## setup
 
