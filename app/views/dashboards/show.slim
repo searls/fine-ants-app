@@ -1,0 +1,19 @@
+table
+  thead
+    tr
+      th Account Name
+      th Amount
+
+  tbody
+    - @snapshots.each do |snapshot|
+      tr
+        td
+          = snapshot.account.name
+        td
+          = snapshot.amount
+
+  tfoot
+    tr
+      td Grand total
+      td
+        = @total
