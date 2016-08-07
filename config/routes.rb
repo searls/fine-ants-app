@@ -10,4 +10,6 @@ Rails.application.routes.draw do
 
   resources :fine_ants
   resource :dashboard
+
+  root "dashboards#show"
 end

@@ -11,9 +11,14 @@ table
           = snapshot.account.name
         td
           = snapshot.amount
-
   tfoot
     tr
-      td Grand total
       td
-        = @total
+        strong Grand total
+      td
+        strong
+          = @total
+
+= form_for :fine_ants, :url => {:controller => "fine_ants", :action => "create"} do |f|
+  = f.submit 'Update Accounts!'
+
