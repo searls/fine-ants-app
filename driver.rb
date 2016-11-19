@@ -1,7 +1,9 @@
 require "pry"
 require_relative "config/environment"
 
-transactions = DownloadsTransactions.new(User.find(3)).download
+puts "User ID:"
+user_id = gets.chomp
+transactions = DownloadsTransactions.new(User.find(user_id)).download
 
 binding.pry
 puts transactions
