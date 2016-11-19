@@ -7,7 +7,7 @@ class FineAntsController < ApplicationController
         Account.upsert!(user, account_snapshot)
       end
     end
-    flash[:info] = "Accounts updated!"
+    flash[:info] = "Snapshots taken!"
     redirect_to dashboard_path
   end
 
