@@ -1,12 +1,7 @@
-require "fine_ants"
-require "dotenv"
 require "pry"
+require_relative "config/environment"
 
-Dotenv.load
+transactions = DownloadsTransactions.new(User.find(3)).download
 
-accounts = FineAnts.download(:vanguard, {
-  :user => "ENV['VANGUARD_USER']",
-  :password => ENV['VANGUARD_PASSWORD']
-})
-
-puts accounts
+binding.pry
+puts transactions
