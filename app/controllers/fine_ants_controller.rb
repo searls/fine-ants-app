@@ -2,12 +2,22 @@ require "fine_ants"
 
 class FineAntsController < ApplicationController
   def create
-    User.all.each do |user|
+    users.each do |user|
       DownloadsTransactions.new(user).download.each do |account_snapshot|
         Account.upsert!(user, account_snapshot)
       end
     end
     flash[:info] = "Accounts updated!"
     redirect_to dashboard_path
+  end
+
+  private
+
+  def users
+    if params.has_key?(:user_id)
+      [User.find(params[:user_id])]
+    else
+      User.all
+    end
   end
 end
