@@ -17,7 +17,7 @@ $ git clone git@github.com:searls/fine_ants_app.git #  🐜
 $ cd fine_ants_app
 $ bundle
 $ bundle exec rake db:create db:migrate
-$ bundle exec rails s
+$ bundle exec rails s -b 127.0.0.1
 ```
 
 That'll get the server going at [http://localhost:3000](http://localhost:3000).
