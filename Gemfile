@@ -4,10 +4,11 @@ gem 'fine_ants'
 gem 'slim-rails'
 gem 'administrate'
 gem 'bourbon'
-gem 'dotenv'
+gem 'dotenv' # Is this being used?
 gem 'money-rails'
 gem 'puma'
 gem 'good_migrations'
+gem 'ruby-keychain', :require => 'keychain'
 
 gem 'rails', '4.2.7'
 gem 'sqlite3'
