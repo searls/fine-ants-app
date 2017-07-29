@@ -13,7 +13,7 @@ table
     - @snapshots.each do |snapshot|
       tr
         td
-          = snapshot.account.name
+          = snapshot.account.full_name
         td
           = humanized_money_with_symbol snapshot.amount
   tfoot

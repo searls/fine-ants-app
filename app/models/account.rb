@@ -14,4 +14,7 @@ class Account < ActiveRecord::Base
     end
   end
 
+  def full_name
+    "#{bank.name} - #{name}"
+  end
 end
