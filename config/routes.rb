@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :fine_ants
   resource :dashboard
+  resource :graph
 
   root :to => redirect("/dashboard")
 end
