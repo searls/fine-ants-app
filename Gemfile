@@ -18,7 +18,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 group :development do
-  gem 'pry'
+  gem 'pry-rails'
   gem 'web-console'
 end
 
