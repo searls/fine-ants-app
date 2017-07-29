@@ -83,7 +83,7 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
-    fine_ants (1.5.0)
+    fine_ants (1.6.0)
       capybara (~> 2.7)
       selenium-webdriver (~> 2.53)
     globalid (0.3.7)
