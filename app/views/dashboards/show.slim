@@ -16,7 +16,7 @@ table
       - next if snapshot.amount == 0
       tr
         td
-          = snapshot.account.full_name
+          = link_to snapshot.account.full_name, admin_account_path(snapshot.account)
         td
           = snapshot.updated_at.strftime("%B %d, %Y")
         td.ytd-change class=(snapshot.ytd_change.positive? ? 'positive' : 'negative')
