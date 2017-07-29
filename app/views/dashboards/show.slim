@@ -7,6 +7,7 @@ table
   thead
     tr
       th Account Name
+      th Last Updated
       th Amount
 
   tbody
@@ -15,11 +16,13 @@ table
         td
           = snapshot.account.full_name
         td
+          = snapshot.updated_at.strftime("%B %d, %Y")
+        td
           = humanized_money_with_symbol snapshot.amount
   tfoot
     tr
-      td
-        strong Grand total
+      td colspan=2
+        strong Totals
       td
         strong
           = humanized_money_with_symbol @total
