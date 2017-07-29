@@ -8,24 +8,35 @@ table
     tr
       th Account Name
       th Last Updated
+      th YTD Change
       th Amount
 
   tbody
     - @snapshots.each do |snapshot|
+      - next if snapshot.amount == 0
       tr
         td
           = snapshot.account.full_name
         td
           = snapshot.updated_at.strftime("%B %d, %Y")
+        td.ytd-change class=(snapshot.ytd_change.positive? ? 'positive' : 'negative')
+          = humanized_money_with_symbol snapshot.ytd_change
         td
           = humanized_money_with_symbol snapshot.amount
   tfoot
     tr
       td colspan=2
         strong Totals
+      td.ytd-change class=(@total_ytd_change.positive? ? 'positive' : 'negative')
+        strong
+          = humanized_money_with_symbol @total_ytd_change
       td
         strong
           = humanized_money_with_symbol @total
+
+- if @snapshots.map(&:amount).any?(&:zero?)
+  p.fine-print
+    | Hiding these accounts, because they're empty: #{@snapshots.select {|s| s.amount.zero? }.map {|s| s.account.full_name }.join(", ")}
 
 .actions
   = link_to fine_ants_path, :method => :post do
