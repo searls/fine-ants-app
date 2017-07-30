@@ -88,7 +88,7 @@ GEM
     erubi (1.6.1)
     execjs (2.7.0)
     ffi (1.9.18)
-    fine_ants (1.6.0)
+    fine_ants (1.6.1)
       capybara (~> 2.7)
       selenium-webdriver (~> 2.53)
     foreman (0.83.0)
