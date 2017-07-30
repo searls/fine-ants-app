@@ -6,4 +6,8 @@ class DashboardsController < ApplicationController
     @total = @snapshots.sum(&:amount)
     @total_ytd_change = @snapshots.map(&:ytd_change).reduce(:+)
   end
+
+  def snapshot_chart_data
+    render :json => Snapshot.chart_data
+  end
 end

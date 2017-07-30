@@ -9,8 +9,9 @@ Rails.application.routes.draw do
   end
 
   resources :fine_ants
-  resource :dashboard
-  resource :graph
+  resource :dashboard do
+    get "snapshot-chart-data", :to => "dashboards#snapshot_chart_data"
+  end
 
   root :to => redirect("/dashboard")
 end

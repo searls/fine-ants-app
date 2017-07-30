@@ -1,5 +1,3 @@
-import amcharts from 'amcharts3'
-import {} from 'amcharts3/amcharts/serial'
-import {} from 'amcharts3/amcharts/themes/light'
+import {} from './snapshot-chart'
 
-console.log('hi')
+
