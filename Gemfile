@@ -20,5 +20,6 @@ gem 'webpacker'
 group :development do
   gem 'pry-rails'
   gem 'web-console'
+  gem 'foreman'
 end
 
