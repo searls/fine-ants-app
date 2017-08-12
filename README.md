@@ -23,6 +23,18 @@ $ bundle exec rails s
 
 That'll get the server going at [http://localhost:3000](http://localhost:3000).
 
+### demo
+
+**Be sure to run this on an empty database to keep from corrupting your data.**
+
+To generate demo data, run
+
+```
+$ bundle exec rake demo
+```
+
+This will add randomized banks, accounts, and snapshot data to your database.
+
 ### create stuff
 
 1. Create a bank (e.g. named "Vanguard", adapter "vanguard")
