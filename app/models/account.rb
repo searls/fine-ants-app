@@ -14,6 +14,10 @@ class Account < ActiveRecord::Base
     end
   end
 
+  def most_recent_snapshot
+    snapshots.order("created_at").last
+  end
+
   # Returns the value of the account for a date.
   # 1. If there was a snapshot that day, great
   # 2. Else if there are before & after snapshots, interpolate (eww linear math)

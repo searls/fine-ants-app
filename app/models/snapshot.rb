@@ -15,7 +15,7 @@ class Snapshot < ActiveRecord::Base
     }
   end
 
-  def ytd_change
-    amount - account.value_on(Date.today.beginning_of_year)
+  def change_since(date)
+    amount - account.value_on(date)
   end
 end

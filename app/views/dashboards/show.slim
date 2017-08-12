@@ -17,31 +17,31 @@ table
       th Amount
 
   tbody
-    - @snapshots.each do |snapshot|
-      - next if snapshot.amount == 0
+    - @summaries.accounts.each do |summary|
+      - next if summary.amount == 0
       tr
         td
-          = link_to snapshot.account.full_name, admin_account_path(snapshot.account)
+          = link_to summary.name, admin_account_path(summary.account)
         td
-          = snapshot.updated_at.strftime("%B %d, %Y")
-        td.ytd-change class=(snapshot.ytd_change.positive? ? 'positive' : 'negative')
-          = humanized_money_with_symbol snapshot.ytd_change
+          = summary.last_updated.strftime("%B %d, %Y")
+        td.ytd-change class=(summary.ytd_change.positive? ? 'positive' : 'negative')
+          = humanized_money_with_symbol summary.ytd_change
         td
-          = humanized_money_with_symbol snapshot.amount
+          = humanized_money_with_symbol summary.amount
   tfoot
     tr
       td colspan=2
         strong Totals
-      td.ytd-change class=(@total_ytd_change.positive? ? 'positive' : 'negative')
+      td.ytd-change class=(@summaries.ytd_change.positive? ? 'positive' : 'negative')
         strong
-          = humanized_money_with_symbol @total_ytd_change
+          = humanized_money_with_symbol @summaries.ytd_change
       td
         strong
           = humanized_money_with_symbol @total
 
-- if @snapshots.map(&:amount).any?(&:zero?)
+- if @summaries.empty_accounts.any?
   p.fine-print
-    | Hiding these accounts, because they're empty: #{@snapshots.select {|s| s.amount.zero? }.map {|s| s.account.full_name }.join(", ")}
+    | Hiding these accounts, because they're empty: #{@summaries.empty_accounts.map {|s| s.name }.join(", ")}
 
 .actions
   = link_to fine_ants_path, :method => :post do
