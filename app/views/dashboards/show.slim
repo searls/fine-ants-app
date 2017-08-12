@@ -14,7 +14,9 @@ table
       th Account Name
       th Last Updated
       th YTD Change
-      th Amount
+      th Monthly Change
+      th Weekly Change
+      th.total Amount
 
   tbody
     - @summaries.accounts.each do |summary|
@@ -24,20 +26,30 @@ table
           = link_to summary.name, admin_account_path(summary.account)
         td
           = summary.last_updated.strftime("%B %d, %Y")
-        td.ytd-change class=(summary.ytd_change.positive? ? 'positive' : 'negative')
+        td.currency class=(summary.ytd_change.positive? ? 'positive' : 'negative')
           = humanized_money_with_symbol summary.ytd_change
-        td
+        td.currency class=(summary.month_change.positive? ? 'positive' : 'negative')
+          = humanized_money_with_symbol summary.month_change
+        td.currency class=(summary.week_change.positive? ? 'positive' : 'negative')
+          = humanized_money_with_symbol summary.week_change
+        td.currency.total class=('negative' unless summary.amount.positive?)
           = humanized_money_with_symbol summary.amount
   tfoot
     tr
       td colspan=2
         strong Totals
-      td.ytd-change class=(@summaries.ytd_change.positive? ? 'positive' : 'negative')
+      td.currency class=(@summaries.ytd_change.positive? ? 'positive' : 'negative')
         strong
           = humanized_money_with_symbol @summaries.ytd_change
-      td
+      td.currency class=(@summaries.month_change.positive? ? 'positive' : 'negative')
         strong
-          = humanized_money_with_symbol @total
+          = humanized_money_with_symbol @summaries.month_change
+      td.currency class=(@summaries.week_change.positive? ? 'positive' : 'negative')
+        strong
+          = humanized_money_with_symbol @summaries.week_change
+      td.currency.total class=('negative' unless @summaries.amount.positive?)
+        strong
+          = humanized_money_with_symbol @summaries.amount
 
 - if @summaries.empty_accounts.any?
   p.fine-print
