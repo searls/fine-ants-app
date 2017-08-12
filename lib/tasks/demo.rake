@@ -5,6 +5,7 @@ BANK_ACCOUNTS_COUNT = 5
 SNAPSHOTS_COUNT = 100
 
 task :demo => :environment do
+  raise 'Error: Database must be empty to fill with demo data' if [Bank, User, Account, Snapshot].map(&:any?).any?
   puts 'Generating sample banks...'
 
   banks = Array.new(BANK_ACCOUNTS_COUNT) do
