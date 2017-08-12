@@ -1,4 +1,4 @@
-class CreateSnapshots < ActiveRecord::Migration
+class CreateSnapshots < ActiveRecord::Migration[5.1]
   def change
     create_table :snapshots do |t|
       t.references :account, index: true, foreign_key: true
