@@ -21,5 +21,6 @@ group :development do
   gem 'pry-rails'
   gem 'web-console'
   gem 'foreman'
+  gem 'faker'
 end
 
