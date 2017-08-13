@@ -3,7 +3,7 @@
 This is a little Rails app that uses the
 [fine_ants](https://github.com/searls/fine_ants)  🐜 gem to aggregate personal account standings and tally them up by taking snapshots using Capybara (e.g. scraping them with browsers). It's meant to be run locally.
 
-<img width="669" alt="screen shot 2016-08-07 at 11 44 03 am" src="https://cloud.githubusercontent.com/assets/79303/17463468/52e93330-5c94-11e6-889d-43566c51f4ba.png">
+<img width="669" alt="Demo dashboard screenshot" src="https://user-images.githubusercontent.com/79303/29250362-4e710d24-800f-11e7-98bc-bd0ea27135c7.png" />
 
 ## setup
 
@@ -27,13 +27,16 @@ That'll get the server going at [http://localhost:3000](http://localhost:3000).
 
 **Be sure to run this on an empty database to keep from corrupting your data.**
 
-To generate demo data, run
+To generate demo data with which to play with the app, run
 
 ```
 $ bundle exec rake demo
 ```
 
 This will add randomized banks, accounts, and snapshot data to your database.
+Also, keep in mind that the demo data isn't attached to a supported fine_ants
+adapter, and so any attempts to generate fresh snapshots will fail. It's just
+there to give you a look at the dashboard with some data in it.
 
 ### create stuff
 
