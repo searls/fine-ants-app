@@ -90,7 +90,7 @@ GEM
     faker (1.8.4)
       i18n (~> 0.5)
     ffi (1.9.18)
-    fine_ants (1.8.0)
+    fine_ants (1.8.1)
       capybara (~> 2.7)
       selenium-webdriver (~> 2.53)
     foreman (0.83.0)
@@ -266,4 +266,4 @@ DEPENDENCIES
   webpacker
 
 BUNDLED WITH
-   1.15.3
+   1.15.4
