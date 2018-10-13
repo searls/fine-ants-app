@@ -15,6 +15,7 @@ class UserDashboard < Administrate::BaseDashboard
     password: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    disabled: Field::Boolean,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -39,6 +40,7 @@ class UserDashboard < Administrate::BaseDashboard
     :password,
     :created_at,
     :updated_at,
+    :disabled,
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -49,6 +51,7 @@ class UserDashboard < Administrate::BaseDashboard
     :accounts,
     :user,
     :password,
+    :disabled,
   ].freeze
 
   # Overwrite this method to customize how users are displayed

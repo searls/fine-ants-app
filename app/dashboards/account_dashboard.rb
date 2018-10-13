@@ -16,6 +16,7 @@ class AccountDashboard < Administrate::BaseDashboard
     name: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    disabled: Field::Boolean,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -41,6 +42,7 @@ class AccountDashboard < Administrate::BaseDashboard
     :name,
     :created_at,
     :updated_at,
+    :disabled,
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -52,6 +54,7 @@ class AccountDashboard < Administrate::BaseDashboard
     :snapshots,
     :foreign_id,
     :name,
+    :disabled,
   ].freeze
 
   # Overwrite this method to customize how accounts are displayed
