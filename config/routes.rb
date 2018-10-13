@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :banks
     resources :snapshots
     resources :users
+    resources :wages
 
     root to: "accounts#index"
   end
