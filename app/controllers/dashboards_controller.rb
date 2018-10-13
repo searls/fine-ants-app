@@ -1,6 +1,6 @@
 class DashboardsController < ApplicationController
   def show
-    @summaries = AccountSummaries.new(Account.all)
+    @summaries = AccountSummaries.new(Account.active)
   end
 
   def snapshot_chart_data

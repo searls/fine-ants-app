@@ -3,6 +3,10 @@ class Account < ActiveRecord::Base
   has_and_belongs_to_many :users
   has_many :snapshots
 
+  def self.active
+    where.not(:disabled => true)
+  end
+
   def self.upsert!(user, account_snapshot)
     find_or_create_by!(
       :bank => user.bank,
