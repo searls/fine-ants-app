@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160807140850) do
+ActiveRecord::Schema.define(version: 20180714162317) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer "bank_id"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20160807140850) do
     t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "disabled", default: false, null: false
     t.index ["bank_id"], name: "index_users_on_bank_id"
   end
 

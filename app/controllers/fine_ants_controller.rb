@@ -17,7 +17,7 @@ class FineAntsController < ApplicationController
     if params.has_key?(:user_id)
       [User.find(params[:user_id])]
     else
-      User.all.sort_by { |u| u.accounts.map(&:most_recent_snapshot).min.created_at  }
+      User.where.not(:disabled => true).sort_by { |u| u.accounts.map(&:most_recent_snapshot).min.created_at  }
     end
   end
 end
