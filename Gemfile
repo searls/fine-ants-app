@@ -20,9 +20,7 @@ gem 'webpacker'
 group :development do
   gem 'pry-rails'
   gem 'web-console'
-  gem 'foreman'
   gem 'faker'
-
-  gem 'listen'
+  gem 'table_print'
 end
 
