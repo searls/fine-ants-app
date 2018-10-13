@@ -32,6 +32,17 @@ $(() => {
       "useLineColorForBulletBorder": true,
       "valueField": "value",
       "balloonText": "$[[value]]"
+    }, {
+      "id": "g2",
+      "bullet": "round",
+      "bulletBorderAlpha": 1,
+      "bulletColor": "#FFFFFF",
+      "bulletSize": 5,
+      "hideBulletsCount": 50,
+      "lineThickness": 2,
+      "useLineColorForBulletBorder": true,
+      "valueField": "wage",
+      "balloonText": "$[[wage]]"
     }],
     "chartScrollbar": {
       "graph": "g1",
