@@ -3,8 +3,8 @@ class Snapshot < ActiveRecord::Base
   monetize :amount_cents
 
   def self.chart_data
-    accounts = Account.all
-    snapshots = all
+    accounts = Account.active
+    snapshots = all.joins(:account).where.not('accounts.disabled' => true)
     snapshots.map(&:created_at).map(&:to_date).uniq.sort.map { |date|
       {
         :date => date,
