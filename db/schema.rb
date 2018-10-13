@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_13_150825) do
+ActiveRecord::Schema.define(version: 2018_10_13_152718) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer "bank_id"
@@ -57,6 +57,15 @@ ActiveRecord::Schema.define(version: 2018_10_13_150825) do
     t.datetime "updated_at", null: false
     t.boolean "disabled", default: false, null: false
     t.index ["bank_id"], name: "index_users_on_bank_id"
+  end
+
+  create_table "wages", force: :cascade do |t|
+    t.integer "amount_cents", default: 0, null: false
+    t.string "amount_currency", default: "USD", null: false
+    t.date "date"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
