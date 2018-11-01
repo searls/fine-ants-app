@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'fine_ants'
+gem 'fine_ants', :git => 'https://github.com/searls/fine_ants'
 gem 'slim-rails'
 gem 'administrate', :git => 'https://github.com/thoughtbot/administrate'
 gem 'bourbon'
