@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/searls/fine_ants
-  revision: 997dcb1717fef400046d3263f360883d11d027be
+  revision: fe799738c086ca5a049fe07cbe1ddd544d506e6c
   specs:
     fine_ants (1.8.5)
       capybara (~> 3.18.0)
