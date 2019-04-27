@@ -4,9 +4,9 @@ class DownloadsTransactions
   end
 
   def download
-    return FineAnts.download(@user.bank.fine_ants_adapter, {
-      :user => @user.user,
-      :password => @user.password
+    FineAnts.download(@user.bank.fine_ants_adapter, {
+      user: @user.user,
+      password: @user.password,
     })
   end
 end

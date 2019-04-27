@@ -1,7 +1,7 @@
 class AccountSummaries
   attr_reader :name, :last_updated, :week_change, :month_change, :ytd_change,
-              :amount,
-              :accounts, :empty_accounts
+    :amount,
+    :accounts, :empty_accounts
 
   def initialize(accounts)
     @accounts = accounts.map { |a| AccountSummary.new(a) }
@@ -17,8 +17,8 @@ end
 
 class AccountSummary
   attr_reader :name, :last_updated, :week_change, :month_change, :ytd_change,
-              :amount,
-              :account
+    :amount,
+    :account
 
   def initialize(account)
     snapshot = account.most_recent_snapshot
@@ -31,4 +31,3 @@ class AccountSummary
     @account = account
   end
 end
-

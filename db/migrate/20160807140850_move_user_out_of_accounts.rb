@@ -4,7 +4,6 @@ class MoveUserOutOfAccounts < ActiveRecord::Migration[5.1]
       t.references :user, index: true, foreign_key: true
       t.references :account, index: true, foreign_key: true
 
-
       t.timestamps null: false
     end
     add_index :accounts_users, [:user_id, :account_id], unique: true

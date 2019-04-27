@@ -11,8 +11,8 @@ Rails.application.routes.draw do
 
   resources :fine_ants
   resource :dashboard do
-    get "snapshot-chart-data", :to => "dashboards#snapshot_chart_data"
+    get "snapshot-chart-data", to: "dashboards#snapshot_chart_data"
   end
 
-  root :to => redirect("/dashboard")
+  root to: redirect("/dashboard")
 end

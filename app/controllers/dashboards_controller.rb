@@ -4,7 +4,7 @@ class DashboardsController < ApplicationController
   end
 
   def snapshot_chart_data
-    render :json => merge_points([Snapshot.chart_data, Wage.chart_data])
+    render json: merge_points([Snapshot.chart_data, Wage.chart_data])
   end
 
   def merge_points(points)
@@ -19,4 +19,3 @@ class DashboardsController < ApplicationController
     }.flatten.sort_by {|e| e[:date] }
   end
 end
-

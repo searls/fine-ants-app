@@ -5,5 +5,5 @@ puts "User ID:"
 user_id = gets.chomp
 transactions = DownloadsTransactions.new(User.find(user_id)).download
 
-binding.pry
+binding.pry # rubocop:disable Debugger
 puts transactions

@@ -14,7 +14,7 @@ class FineAntsController < ApplicationController
   private
 
   def users
-    if params.has_key?(:user_id)
+    if params.key?(:user_id)
       [User.find(params[:user_id])]
     else
       User.active.sort_by { |u|

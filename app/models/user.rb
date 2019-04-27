@@ -3,6 +3,6 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :accounts
 
   def self.active
-    where.not(:disabled => true)
+    where.not(disabled: true)
   end
 end

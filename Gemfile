@@ -19,6 +19,7 @@ gem "webpacker"
 
 group :development do
   gem "pry-rails"
+  gem "standard"
   gem "web-console"
   gem "faker"
   gem "table_print"
