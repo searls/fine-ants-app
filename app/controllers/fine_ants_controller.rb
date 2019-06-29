@@ -18,7 +18,7 @@ class FineAntsController < ApplicationController
       [User.find(params[:user_id])]
     else
       User.active.sort_by { |u|
-        u.accounts.active.map(&:most_recent_snapshot).min.created_at
+        u.accounts.active.map { |a| a.most_recent_snapshot.created_at }.min
       }
     end
   end
