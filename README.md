@@ -13,9 +13,9 @@ deploying it to Heroku or Google or the Cloud!**
 ### install
 
 ```
-$ git clone git@github.com:searls/fine_ants_app.git #  🐜
-$ cd fine_ants_app
-$ bundle
+$ git clone git@github.com:searls/fine-ants-app.git #  🐜
+$ cd fine-ants-app
+$ bundle && yarn
 $ bundle exec rake db:create db:migrate
 $ ./bin/webpack-dev-server &
 $ bundle exec rails s
