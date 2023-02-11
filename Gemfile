@@ -1,21 +1,21 @@
 source "https://rubygems.org"
 
+ruby "3.2.1"
+
 gem "fine_ants", git: "https://github.com/searls/fine_ants"
 gem "slim-rails"
-gem "administrate", git: "https://github.com/thoughtbot/administrate"
-gem "bourbon"
+gem "administrate"
 gem "dotenv"
 gem "money-rails"
 gem "puma"
 gem "good_migrations"
 
-gem "rails"
+gem "rails", "~> 7.0"
 gem "sqlite3"
-gem "sass-rails"
+gem "sassc-rails"
+gem "turbo-rails"
 gem "uglifier"
-gem "coffee-rails"
-gem "turbolinks"
-gem "webpacker"
+gem "jsbundling-rails"
 
 group :development do
   gem "pry-rails"

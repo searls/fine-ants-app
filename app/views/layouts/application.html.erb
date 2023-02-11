@@ -2,9 +2,9 @@
 <html>
 <head>
   <title>FineAntsApp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    "application", "data-turbo-track": "reload", media: "all" %>
   <%= csrf_meta_tags %>
-  <%= javascript_pack_tag 'application' %>
+  <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
 </head>
 <body>
   <div class="app-container">

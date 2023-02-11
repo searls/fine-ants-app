@@ -10,7 +10,7 @@ class Snapshot < ActiveRecord::Base
         date: date,
         value: accounts.map { |a|
           a.value_on(date, snapshots.select { |s| s.account == a })
-        }.sum.to_f,
+        }.sum(0).to_f,
       }
     }
   end

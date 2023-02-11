@@ -7,10 +7,10 @@ class AccountSummaries
     @accounts = accounts.map { |a| AccountSummary.new(a) }
     @name = "Totals"
     @last_updated = @accounts.map(&:last_updated).max
-    @week_change = @accounts.map(&:week_change).sum
-    @month_change = @accounts.map(&:month_change).sum
-    @ytd_change = @accounts.map(&:ytd_change).sum
-    @amount = @accounts.map(&:amount).sum
+    @week_change = @accounts.map(&:week_change).sum(0)
+    @month_change = @accounts.map(&:month_change).sum(0)
+    @ytd_change = @accounts.map(&:ytd_change).sum(0)
+    @amount = @accounts.map(&:amount).sum(0)
     @empty_accounts = @accounts.select { |a| a.amount.zero? }
   end
 end
