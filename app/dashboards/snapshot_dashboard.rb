@@ -13,7 +13,7 @@ class SnapshotDashboard < Administrate::BaseDashboard
     amount_cents: Field::Number,
     amount_currency: Field::String,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -25,7 +25,7 @@ class SnapshotDashboard < Administrate::BaseDashboard
     :account,
     :id,
     :amount_cents,
-    :amount_currency,
+    :amount_currency
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -36,7 +36,7 @@ class SnapshotDashboard < Administrate::BaseDashboard
     :amount_cents,
     :amount_currency,
     :created_at,
-    :updated_at,
+    :updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -45,7 +45,7 @@ class SnapshotDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :account,
     :amount_cents,
-    :amount_currency,
+    :amount_currency
   ].freeze
 
   # Overwrite this method to customize how snapshots are displayed

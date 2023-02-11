@@ -14,7 +14,7 @@ class WageDashboard < Administrate::BaseDashboard
     date: Field::DateTime,
     description: Field::String,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -26,7 +26,7 @@ class WageDashboard < Administrate::BaseDashboard
     :id,
     :amount_cents,
     :amount_currency,
-    :date,
+    :date
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -38,7 +38,7 @@ class WageDashboard < Administrate::BaseDashboard
     :date,
     :description,
     :created_at,
-    :updated_at,
+    :updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -48,7 +48,7 @@ class WageDashboard < Administrate::BaseDashboard
     :amount_cents,
     :amount_currency,
     :date,
-    :description,
+    :description
   ].freeze
 
   # Overwrite this method to customize how wages are displayed

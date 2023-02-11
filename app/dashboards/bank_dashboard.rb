@@ -12,7 +12,7 @@ class BankDashboard < Administrate::BaseDashboard
     name: Field::String,
     fine_ants_adapter: Field::String,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -24,7 +24,7 @@ class BankDashboard < Administrate::BaseDashboard
     :id,
     :name,
     :fine_ants_adapter,
-    :created_at,
+    :created_at
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -34,7 +34,7 @@ class BankDashboard < Administrate::BaseDashboard
     :name,
     :fine_ants_adapter,
     :created_at,
-    :updated_at,
+    :updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -42,7 +42,7 @@ class BankDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :name,
-    :fine_ants_adapter,
+    :fine_ants_adapter
   ].freeze
 
   # Overwrite this method to customize how banks are displayed

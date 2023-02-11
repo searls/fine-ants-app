@@ -6,7 +6,7 @@ class DownloadsTransactions
   def download
     FineAnts.download(@user.bank.fine_ants_adapter, {
       user: @user.user,
-      password: @user.password,
+      password: @user.password
     })
   end
 end
