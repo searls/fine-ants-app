@@ -28,7 +28,7 @@ as well as a link to its edit page.
       t("administrate.actions.edit_resource", name: page.page_title),
       [:edit, namespace, page.resource],
       class: "button",
-    ) if valid_action?(:edit) && show_action?(:edit, page.resource) %>
+    ) if existing_action?(page.resource, :edit) && authorized_action?(:edit, page.resource) %>
   </div>
 </header>
 
@@ -49,7 +49,7 @@ as well as a link to its edit page.
 </section>
 
 <!--- hackhackhack -->
-<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= stylesheet_link_tag    'application', media: 'all' %>
 <div class="actions">
   <%= link_to fine_ants_path(:user_id => page.resource.id), :method => :post do %>
     <div class="big-update-button">Take Snapshot!</div>

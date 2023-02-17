@@ -15,18 +15,18 @@ task demo: :environment do
   puts "Generating sample users, accounts, and historical snapshots..."
   banks.each do |bank|
     account_type = ACCOUNT_TYPES.sample
-    account_number = Faker::Number.number(5)
+    account_number = Faker::Bank.account_number
 
     User.create!(bank: bank,
-                 user: Faker::Internet.user_name,
-                 password: "demo password")
+      user: Faker::Internet.user_name,
+      password: "demo password")
 
     account = Account.create!(bank: bank, name: "#{account_type} - #{account_number}")
 
     Array.new(SNAPSHOTS_COUNT) do
       Snapshot.create!(account: account,
-                       amount_cents: Faker::Number.decimal(4, 2),
-                       created_at: Faker::Date.between(1.years.ago, Date.today))
+        amount_cents: Faker::Number.decimal(l_digits: 4, r_digits: 2),
+        created_at: Faker::Date.between(from: 1.years.ago, to: Date.today))
     end
   end
 end

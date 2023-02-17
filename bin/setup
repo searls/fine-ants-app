@@ -11,6 +11,7 @@ Dir.chdir APP_ROOT do
   puts "== Installing dependencies =="
   system "gem install bundler --conservative"
   system "bundle check || bundle install"
+  system "yarn check || yarn install --check-files"
 
   # puts "\n== Copying sample files =="
   # unless File.exist?("config/database.yml")
@@ -18,7 +19,7 @@ Dir.chdir APP_ROOT do
   # end
 
   puts "\n== Preparing database =="
-  system "bin/rake db:setup"
+  system "bin/rails db:prepare"
 
   puts "\n== Removing old logs and tempfiles =="
   system "rm -f log/*"

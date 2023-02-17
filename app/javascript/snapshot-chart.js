@@ -1,10 +1,10 @@
 import amcharts from 'amcharts3'
-import {} from 'amcharts3/amcharts/serial'
-import {} from 'amcharts3/amcharts/plugins/dataloader/dataloader'
-import {} from 'amcharts3/amcharts/themes/light'
+import 'amcharts3/amcharts/serial'
+import 'amcharts3/amcharts/plugins/dataloader/dataloader'
+import 'amcharts3/amcharts/themes/light'
 
-$(() => {
-  if ($('#snapshot-chart').length === 0) return
+document.addEventListener('turbo:load', () => {
+  if (!document.getElementById('snapshot-chart')) return
 
   const chart = AmCharts.makeChart("snapshot-chart", {
     "pathToImages": "/assets/amcharts/images/",

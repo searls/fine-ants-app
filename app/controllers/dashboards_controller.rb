@@ -8,7 +8,7 @@ class DashboardsController < ApplicationController
   end
 
   def merge_points(points)
-    points.flatten.group_by {|e| e[:date]}.map {|(_, entries)|
+    points.flatten.group_by { |e| e[:date] }.map { |(_, entries)|
       if entries.size == 1
         entries.first
       else
@@ -16,6 +16,6 @@ class DashboardsController < ApplicationController
           combined.merge!(entry)
         }
       end
-    }.flatten.sort_by {|e| e[:date] }
+    }.flatten.sort_by { |e| e[:date] }
   end
 end

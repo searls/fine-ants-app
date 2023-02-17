@@ -6,12 +6,12 @@ class Wage < ActiveRecord::Base
       acc = total.present? ? total[:wage] : 0
       {
         date: wage.date,
-        wage: acc + wage.amount.to_d,
+        wage: acc + wage.amount.to_d
       }
     }
   end
 
   def self.scan(arr)
-    arr.inject([]) {|acc, el| acc << yield(acc.last, el) }
+    arr.inject([]) { |acc, el| acc << yield(acc.last, el) }
   end
 end

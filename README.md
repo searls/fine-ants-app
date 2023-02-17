@@ -10,15 +10,19 @@ This is a little Rails app that uses the
 **This app isn't secured! At all! It's meant to be run locally! Don't go
 deploying it to Heroku or Google or the Cloud!**
 
+### requirements
+
+- Ruby 3.2.1
+- Bundler 2
+- Yarn 1
+
 ### install
 
 ```
 $ git clone git@github.com:searls/fine-ants-app.git #  🐜
 $ cd fine-ants-app
-$ bundle && yarn
-$ bundle exec rake db:create db:migrate
-$ ./bin/webpack-dev-server &
-$ bundle exec rails s
+$ bin/setup
+$ bin/dev
 ```
 
 That'll get the server going at [http://localhost:3000](http://localhost:3000).
@@ -30,7 +34,7 @@ That'll get the server going at [http://localhost:3000](http://localhost:3000).
 To generate demo data with which to play with the app, run
 
 ```
-$ bundle exec rake demo
+$ bin/rails demo
 ```
 
 This will add randomized banks, accounts, and snapshot data to your database.
@@ -71,7 +75,7 @@ image) with:
 ```
 $ open db/data.dmg
 # Which will prompt me for the image's password
-$ rails s
+$ bin/dev
 ```
 
 Since it's so easy to encrypt your local data in OS X, this is a good enough
